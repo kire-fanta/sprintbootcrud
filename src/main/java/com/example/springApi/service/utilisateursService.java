@@ -8,7 +8,7 @@ public interface utilisateursService {
     utilisateurs creer(utilisateurs Utilisateurs);
     List<utilisateurs> lire();
 
-    utilisateurs modifier(long id, utilisateurs Utilisateurs);
+    utilisateurs modifier( utilisateurs Utilisateurs, Long id);
 
     String supprimer (long id);
 }

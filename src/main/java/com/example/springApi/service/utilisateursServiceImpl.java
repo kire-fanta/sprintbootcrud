@@ -24,16 +24,16 @@ public class utilisateursServiceImpl implements utilisateursService{
         return userRepo.findAll();
     }
 
-
     @Override
-    public utilisateurs modifier(long id, utilisateurs Utilisateurs) {
-        return  userRepo.findById(id)
+    public utilisateurs modifier(utilisateurs Utilisateurs, Long id) {
+        return userRepo.findById(id)
                 .map(u -> {
-                    u.setNom(u.getNom());
+                    u.setNom(Utilisateurs.getNom());
                     return userRepo.save(u);
 
                 }).orElseThrow(() -> new RuntimeException("utilisateurs non trouvé"));
     }
+
 
     @Override
     public String supprimer(long id) {
